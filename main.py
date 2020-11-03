@@ -1,17 +1,22 @@
+import time
+import getopt, sys
+from logger import Logger
 from veb import VEB
-from random import randint
+from input_parser import parse_input
 
 
 def main():
-    veb = VEB(16)
-    insertions = [randint(1, 900) for i in range(1000)]
-    for i in insertions:
-        veb.insert(i)
+    input_file = "./input.txt"
+    output_file = "./output.txt"
+    inputs = parse_input(input_file)
+    logger = Logger()
+    veb = VEB(w=64, logger=logger)
 
-    print(insertions)
-    print(veb.successor(10))
-    print(veb.successor(816))
-    print(veb.successor(444))
+    for ipt in inputs:
+        cmd, value = ipt
+        veb.apply(cmd, value)
+
+    logger.write(output_file)
 
 
 if __name__ == "__main__":

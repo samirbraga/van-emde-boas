@@ -9,12 +9,8 @@ class Logger:
     def __init__(self):
         self.logs = []
 
-    def input(self, input: (Cmd, int), hash_result: int, operation_position: int) -> None:
-        self.logs.extend([
-            input,
-            (hash_result, operation_position),
-            None
-        ])
+    def output(self, value: int) -> None:
+        self.logs.append(value)
 
     def cmd(self, cmd: Cmd, value: int) -> None:
         self.logs.extend([
