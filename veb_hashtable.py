@@ -46,7 +46,7 @@ class Hashtable:
         self._pieces_number = int(word_size / binary_piece_size)
         self._word_size = word_size
         self._removed_count = 0
-        self._pieces_table_size = 2 ** self._pieces_number
+        self._pieces_table_size = 2 ** binary_piece_size
         self._removed_clean_threshold = 0.25
         self._table = _init_table(table_size)
         self._grow_threshold = grow_threshold
