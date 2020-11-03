@@ -1,3 +1,5 @@
 venv
 .idea
 __pycache__
+veb_hashtable.py
+veb_tests.py
