@@ -24,10 +24,10 @@ class VEB:
         self._summary = None
 
         if self._u > 2:
-            if self._w > 16:
+            if self._w > 8:
                 self._clusters = Hashtable(100, self._w, 8)
             else:
-                self._clusters = Hashtable(100, 16, 8)
+                self._clusters = Hashtable(100, 8, 8)
 
         # binary utilities
         self._max_number = 2 ** w - 1
