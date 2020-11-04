@@ -1,4 +1,4 @@
-## Hashtable
+## Van Emde Boas
 
 A presente implementação traz um Van Emde Boas recursivo de espaço linear com apliação da tabela de dispersão. 
 
