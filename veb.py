@@ -24,10 +24,10 @@ class VEB:
         self._summary = None
 
         if self._u > 2:
-            if self._w > 8:
-                self._clusters = Hashtable(100, self._w, 8)
-            else:
-                self._clusters = Hashtable(100, 8, 8)
+            # if self._w > 8:
+            #     self._clusters = Hashtable(100, self._w, 8)
+            # else:
+            self._clusters = {}
 
         # binary utilities
         self._max_number = 2 ** w - 1
@@ -47,15 +47,15 @@ class VEB:
     def _get_from_clusters(self, key: int) -> Optional[VEB]:
         if self._u <= 2:
             return None
-        # if key in self._clusters:
-        #     return self._clusters[key]
-        # else:
-        #     return None
-        return self._clusters.get(key)
+        if key in self._clusters:
+            return self._clusters[key]
+        else:
+            return None
+        # return self._clusters.get(key)
 
     def _add_to_clusters(self, key: int, node: VEB):
-        # self._clusters[key] = node
-        self._clusters.add(key, node)
+        self._clusters[key] = node
+        # self._clusters.add(key, node)
 
     def _split_number(self, n: int) -> (int, int):
         high = (n & self._high_mask) >> int(self._w / 2)
