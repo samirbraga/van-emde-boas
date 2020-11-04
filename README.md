@@ -2,7 +2,7 @@
 
 A presente implementação traz um Van Emde Boas recursivo de espaço linear com apliação da tabela de dispersão. 
 
-**[Versão sem hashtable](/blob/without-hashtable)**
+**[Versão sem hashtable](https://github.com/samirbraga/van-emde-boas/tree/without-hashtable)**
 
 ### Execução
 
